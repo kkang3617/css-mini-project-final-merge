@@ -1,0 +1,776 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+
+/* reset */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input {
+    outline: none;
+    border: none;
+}
+
+/* common style */
+.wrap {
+    font-size: 15px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.hide {
+    display: none !important;
+}
+
+/* header */
+body {
+    background: black;
+}
+
+header {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    height: 100px;
+    border-bottom: 2px solid gray;
+
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+}
+
+header .inner-header {
+    /* background: tomato; */
+    width: 70%;
+    margin: 0 auto;
+    height: 100px;
+    padding: 10px;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+header .inner-header::before {
+    text-align: center;
+    line-height: 50px;
+    color: rgba(128, 128, 128, 0);
+    font-size: 2em;
+    content: '〈';
+    width: 10px;
+    height: 50px;
+    left: 2%;
+    position: absolute;
+    transition: 1s;
+}
+
+header .inner-header:hover::before {
+    text-align: center;
+    line-height: 50px;
+    color: gray;
+    font-size: 2em;
+    content: '〈';
+    width: 10px;
+    height: 50px;
+    left: -3%;
+    position: absolute;
+}
+
+header .inner-header .slide {
+    font-size: 30px;
+    font-weight: bold;
+    color: gray;
+    margin-left: 10px;
+    flex: 1;
+}
+
+header .inner-header .title {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    flex: 55;
+}
+
+header .inner-header .button {
+    text-align: center;
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 20px;
+    color: white;
+    flex: 8;
+}
+
+header .inner-header .button:hover {
+    border: 2px solid lightgray;
+    transition: 0.7s;
+}
+
+header .inner-header .logo img {
+    height: 40px;
+}
+
+/* section.main start */
+section.main {
+    background: url(../img/hero-bg.svg) no-repeat center / cover fixed;
+    height: 100vh;
+}
+
+section.main .main-title {
+    position: absolute;
+    top: 30%;
+    left: 16%;
+    color: white;
+}
+
+section.main .main-title div:nth-child(1) {
+    text-align: center;
+    border: 2px solid rgb(208, 208, 209);
+    border-radius: 20px;
+    width: 23%;
+    padding: 10px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+section.main .main-title div:nth-child(1)::before {
+    text-align: center;
+    color: #ff4800;
+    font-size: 0.8em;
+    content: '●';
+    width: 10px;
+    height: 50px;
+    top: 35%;
+    left: 8%;
+    position: absolute;
+
+    animation: flash 1.2s infinite alternate;
+}
+
+@keyframes flash {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+section.main .main-title h2 {
+    font-size: 60px;
+    font-weight: bold;
+}
+
+section.main .main-title p {
+    font-size: 1.3em;
+    color: gray;
+    margin-top: 50px;
+    line-height: 1.4em;
+}
+
+section.main .main-title p span {
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1.2;
+    font-size: 1.6em;
+}
+
+section.main .main-title .buttons {
+    margin-top: 100px;
+    font-size: 1.4em;
+}
+
+section.main .main-title .button {
+    color: black;
+    background: white;
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+section.main .main-title .button i {
+    margin-left: 10px;
+}
+
+section.main .main-title .play {
+    border: 2px solid transparent;
+    border-radius: 10px;
+    padding: 20px;
+    margin-left: 30px;
+}
+
+section.main .main-title .play:hover {
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 20px;
+    margin-left: 30px;
+    transition: 0.5s;
+}
+
+section.main .main-title .play i {
+    margin-right: 10px;
+}
+
+/* section.intro */
+section.intro {
+    background: black;
+}
+
+section.intro .content {
+    width: 70%;
+    color: white;
+    margin: 100px auto;
+}
+
+section.intro .content .paragraph {
+    width: 55%;
+    font-size: 1.3em;
+    line-height: 1.5;
+}
+
+section.intro .content .paragraph span {
+    color: gray;
+}
+
+section.intro .content .content-up {
+    /* background: greenyellow; */
+    height: 100px;
+    border-bottom: 1px solid gray;
+    padding-bottom: 200px;
+    display: flex;
+}
+
+section.intro .content .content-up .info {
+    font-size: 3em;
+    line-height: 1.4;
+
+}
+
+section.intro .content .content-down {
+    /* background: yellow; */
+    padding: 70px 0px 0 0px;
+    display: flex;
+}
+
+section.intro .content .content-down ul {
+    font-size: 1.8em;
+    line-height: 1.7;
+}
+
+section.intro .content .content-down ul li {
+    margin-bottom: 50px;
+}
+
+section.intro .content .content-down ul li i,
+section.intro .content .content-down ul li span {
+    color: gray;
+}
+
+/* section.event */
+section.event {
+    background: #20202a;
+    color: white;
+    border: 2px solid gray;
+    border-radius: 70px;
+}
+
+section.event .title {
+    /* background: tomato; */
+    font-size: 3em;
+    width: 70%;
+    margin: 100px auto;
+}
+
+section.event .box {
+    background: #20202a;
+    font-size: 1.1em;
+    letter-spacing: 1.3;
+    width: 70%;
+    margin: 10px auto;
+    padding-bottom: 50px;
+    border-bottom: 1px solid gray;
+    position: sticky;
+    top: 102px;
+}
+
+section.event .box .date {
+    padding-top: 10px;
+}
+
+section.event .box .content {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+section.event .box .content .paragraph p {
+    color: gray;
+    line-height: 1.4;
+}
+
+section.event .box .content .buttons {
+    display: flex;
+    align-items: center;
+    align-self: flex-end;
+    position: relative;
+}
+
+section.event .box .content .buttons span {
+    border: 2px solid gray;
+    border-radius: 30px;
+    padding: 10px;
+    margin-left: 10px;
+
+}
+
+section.event .box .content .buttons span:hover {
+    border: 2px solid lightgray;
+    transition: 0.5s;
+}
+
+section.event .box .content .buttons .button1:hover .gnb-region {
+    animation: show1 1s forwards;
+    background: black;
+}
+
+section.event .box .content .buttons .button2:hover .gnb-time {
+    animation: show2 1s forwards;
+    background: black;
+}
+
+
+section.event .box .content .gnb-region {
+    line-height: 1.2;
+    width: 180px;
+    padding: 15px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.25);
+    border: 2px solid lightgray;
+    border-radius: 10px;
+
+    position: absolute;
+    right: 195px;
+    bottom: -115px;
+
+    opacity: 0;
+}
+
+section.event .box .content .gnb-time {
+    line-height: 1.2;
+    width: 200px;
+    padding: 15px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.25);
+    border: 2px solid lightgray;
+    border-radius: 10px;
+
+    position: absolute;
+    right: -7px;
+    bottom: -185px;
+
+    opacity: 0;
+}
+
+@keyframes show1 {
+    from {
+        opacity: 0;
+        bottom: -100px;
+    }
+
+    to {
+        opacity: 1;
+        bottom: -115px;
+    }
+}
+
+@keyframes show2 {
+    from {
+        opacity: 0;
+        bottom: -160px;
+    }
+
+    to {
+        opacity: 1;
+        bottom: -175px;
+    }
+}
+
+/* section.event end */
+
+/* section.event .detail */
+
+section.event .detail {
+    line-height: 1.4;
+    width: 70%;
+    margin: 0 auto;
+    border-bottom: 1px solid gray;
+    justify-content: space-around;
+    padding: 50px 0;
+    display: flex;
+}
+
+section.event .detail .time {
+    flex: 1.5;
+}
+
+section.event .detail .time p:nth-child(2) {
+    color: gray;
+}
+
+section.event .detail .paragraph {
+    flex: 3;
+}
+
+section.event .detail .paragraph p {
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+section.event .detail .participant {
+    flex: 2;
+}
+
+section.event .detail .participant li {
+    margin-bottom: 4%;
+}
+
+section.event .detail .participant h1 {
+    color: gray;
+}
+
+section.event .detail .participant .partid {
+    display: flex;
+    flex-direction: row;
+}
+
+section.event .detail .participant .partid i {
+    font-size: 3em;
+}
+
+section.event .detail .participant .partid .partid-detail {
+    margin-left: 3%;
+}
+
+section.event .detail .participant .partid .partid-detail p:first-child {
+    font-weight: bold;
+}
+
+section.event .detail .participant .partid .partid-detail p:last-child {
+    color: gray;
+}
+
+/* section.event end */
+
+/* section.join start */
+section.join {
+    background: black;
+    height: 100%;
+}
+
+section.join .box {
+    background: #20202a;
+    text-align: center;
+    width: 70%;
+    margin: 100px auto;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+section.join .box h1 {
+    color: white;
+    font-size: 3em;
+    font-weight: bold;
+    padding: 80px 0 10px 0;
+}
+
+section.join .box p {
+    color: gray;
+    font-size: 1.3em;
+    font-weight: bold;
+    line-height: 1.3;
+    padding: 20px 0;
+    margin-bottom: 50px;
+}
+
+section.join .box .button {
+    font-size: 1.3em;
+    font-weight: bold;
+    background: white;
+    border-radius: 10px;
+    padding: 20px 30px 20px 30px;
+}
+
+section.join .box .inner-box {
+    content: '';
+    background: white;
+    width: 100%;
+    height: 10px;
+    margin-top: 100px;
+    display: flex;
+}
+
+section.join .box .inner-box .dummy1 {
+    background: #010180;
+    flex: 1;
+}
+
+section.join .box .inner-box .dummy2 {
+    background: #affb3d;
+    flex: 1;
+}
+
+section.join .box .inner-box .dummy3 {
+    background: tomato;
+    flex: 2;
+}
+
+/* footer start */
+
+footer hr {
+    border: 0;
+    height: 1px;
+    background: gray;
+}
+
+footer .upfooter {
+    width: 70%;
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .upfooter .title {
+    color: white;
+    font-weight: bold;
+    font-size: 2em;
+    padding-left: 40px;
+}
+
+footer .upfooter .image-box {
+    align-items: center;
+    padding-right: 40px;
+}
+
+footer .upfooter .image-box img {
+    width: 30px;
+    opacity: 0.5;
+    margin-left: 10px;
+}
+
+footer .downfooter {
+    font-size: 1.1em;
+    color: gray;
+    width: 70%;
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .downfooter .rights {
+    padding-left: 40px;
+}
+
+footer .downfooter .menu {
+    padding-right: 40px;
+}
+
+footer .downfooter .menu span {
+    width: 10px;
+    margin-left: 10px;
+    padding: 5px;
+    transition: 0.5s;
+    border-bottom: 2px solid rgba(128, 128, 128, 0);
+}
+
+footer .downfooter .menu span:hover {
+    border-bottom: 2px solid gray;
+}
+
+@media screen and (max-width: 1550px) {
+    header .inner-header .button {
+        padding: 10px;
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 1398px) {
+    header .inner-header .button {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1160px) {
+    header .inner-header {
+        /* background: tomato; */
+        width: 85%;
+    }
+
+    header .inner-header::before {
+        left: 4%;
+    }
+
+    header .inner-header:hover::before {
+        left: -5%;
+    }
+
+    section.main .main-title h2 {
+        font-size: 45px;
+    }
+
+    section.main .main-title p {
+        font-size: 1em;
+    }
+
+    section.main .main-title p span {
+        font-size: 1em;
+    }
+
+    section.main .main-title {
+        top: 30%;
+        left: 10%;
+    }
+
+    section.main .main-title div:nth-child(1) {
+        width: 30%;
+    }
+
+    section.intro .content .paragraph {
+        width: 45%;
+        font-size: 1.1em;
+    }
+
+    section.intro .content .paragraph br {
+        display: none;
+    }
+
+    section.intro .content .content-up {
+        padding-bottom: 150px;
+    }
+
+
+    section.intro .content .content-up .info {
+        font-size: 30px;
+        margin-left: 5%;
+
+    }
+
+    section.intro .content .content-down ul {
+        font-size: 1.4em;
+        line-height: 1.3;
+        margin-left: 5%;
+    }
+
+    section.intro .content .content-down ul li {
+        margin-bottom: 20px;
+    }
+
+    section.event .title {
+        /* background: tomato; */
+        font-size: 2.4em;
+        margin: 70px auto;
+    }
+
+    section.event .box {
+        font-size: 0.9em;
+    }
+
+    section.event .box {
+        font-size: 0.9em;
+    }
+
+    section.event .box br {
+        display: none;
+    }
+
+    section.event .box .content .buttons {
+        display: none;
+    }
+
+    /* section.event .detail */
+
+    section.event .detail .time {
+        font-size: 0.9em;
+    }
+
+    section.event .detail .paragraph br {
+        display: none;
+    }
+
+    section.event .detail .paragraph p {
+        font-size: 1.1em;
+    }
+
+    section.event .detail .participant {
+        font-size: 0.9em;
+        margin-left: 5%;
+    }
+
+    /* section.join start */
+
+    section.join .box h1 {
+        font-size: 2.2em;
+        padding: 50px 0 5px 0;
+    }
+
+    section.join .box p {
+        font-size: 1em;
+        padding: 10px 3%;
+    }
+
+    section.join .box p br {
+        display: none;
+    }
+
+    section.join .box .button {
+        font-size: 1em;
+        padding: 15px 25px 15px 25px;
+    }
+
+    section.join .box .inner-box {
+        margin-top: 70px;
+    }
+
+    /* footer start */
+
+   
+    footer .upfooter {
+        margin: 30px auto;
+    }
+
+    footer .upfooter .title {
+        font-size: 1.5em;
+    }
+
+    footer .upfooter .image-box img {
+        width: 20px;
+        margin-left: 5px;
+    }
+
+    footer .downfooter {
+        font-size: 0.8em;
+        margin: 30px auto;
+    }
+
+    footer .downfooter .rights {
+        padding-left: 40px;
+        font-size: 0.8em;
+    }
+
+    footer .downfooter .menu {
+        padding-right: 40px;
+        font-size: 0.8em;
+    }
+
+    footer .downfooter .menu span {
+        margin-left: 5px;
+        padding: 0;
+
+    }
+
+
+
+
+}

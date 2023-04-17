@@ -1,0 +1,1350 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+
+/* reset */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input {
+    outline: none;
+    border: none;
+}
+
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+@keyframes fadeinleft {
+    0% {
+        opacity: 0;
+        transform: translateX(-30%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+
+}
+
+@keyframes fadeinright {
+    0% {
+        opacity: 0;
+        transform: translateX(30%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+
+}
+
+@keyframes fadeinbottom {
+
+    /* 아래->위 애니메이션 */
+    0% {
+        opacity: 0;
+        transform: translatey(30%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translatey(0%);
+    }
+}
+
+/* common style */
+.wrap {
+    font-size: 15px;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    /*  background: black; */
+    color: white;
+}
+
+.wrap .imagewrap {
+    background: url(../Images/galaxy-g92f80a633_1920.jpg) no-repeat center/ cover fixed;
+    height: 100vh;
+    position: relative;
+}
+
+/* header style */
+header {
+    position: relative;
+    /*  top: 20px; */
+    width: 100%;
+    z-index: 9999;
+    background: rgba(151, 71, 71, 0.01);
+    color: white;
+}
+
+/* inner header */
+header .inner-header {
+    width: 80%;
+    margin: 0 auto;
+
+    display: flex;
+}
+
+header .inner-header .logo {
+    box-sizing: border-box;
+}
+
+header .inner-header .logo a {
+    display: block;
+    margin: 20px
+}
+
+header .inner-header .logo a img {
+    width: 40px;
+}
+
+/* gnb */
+header .inner-header .gnb {
+    margin: 0 auto;
+    font-size: 20px;
+    flex: 4;
+}
+
+header .inner-header .gnb ul {
+    align-content: center;
+    display: flex;
+}
+
+header .inner-header .gnb ul li {
+    margin-top: 32px;
+    margin-right: 40px;
+}
+header .inner-header .gnb ul li.gnb-text{
+    padding-bottom: 20px;
+}
+
+header .inner-header .gnb ul li a {
+    padding: 1px;
+}
+
+header .inner-header .gnb ul li a:hover {
+    transition: 0.3s;
+    opacity: 0.6;
+}
+
+header .inner-header .gnb ul li a:hover img {
+    width: 50%;
+}
+
+/* gnb-hidden product */
+header .inner-header .gnb ul li:nth-child(1):hover .product-hidden {
+    transition: 0.3s;
+    /*     opacity: 1; */
+    display: flex;
+    z-index: 1000;
+}
+
+header .inner-header .gnb ul li:nth-child(1) .product-hidden {
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 300px;
+    height: 530px;
+    background: black;
+    border: 1px solid grey;
+    border-radius: 1%;
+}
+
+header .inner-header .gnb ul li .product-hidden .product {
+    margin-top: -10px;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+header .inner-header .gnb ul li .product-hidden .product li a {
+    font-weight: normal;
+}
+
+header .inner-header .gnb ul li .product-hidden .product li a:hover {
+    color: rgb(7, 7, 236);
+}
+
+header .inner-header .gnb ul li .product-hidden .product li a span {
+    float: left;
+    font-size: 30px;
+}
+
+header .inner-header .gnb ul li .product-hidden .product li a div {
+    float: left;
+    margin-top: -9%;
+    margin-left: 25px;
+    font-size: 13px;
+}
+
+header .inner-header .gnb ul li .product-hidden .product li a .btn-name {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+/* gnb-explore */
+header .inner-header .gnb ul li .product-hidden .explore {
+    position: absolute;
+    top: 0%;
+    left: 300px;
+    width: 300px;
+    height: 530px;
+    background: black;
+    border: 1px solid grey;
+    border-radius: 1%;
+    flex-direction: column;
+}
+
+header .inner-header .gnb ul li .product-hidden .explore .exp {
+    margin-top: 30px;
+    margin-left: 25px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+header .inner-header .gnb ul li .product-hidden .explore li {
+    margin-top: 20px;
+    margin-left: 25px;
+}
+
+header .inner-header .gnb ul li .product-hidden .explore li a {
+    font-weight: normal;
+}
+
+header .inner-header .gnb ul li .product-hidden .explore li a span {
+    opacity: 0;
+    transition: 0.1s;
+}
+
+header .inner-header .gnb ul li .product-hidden .explore li a:hover span {
+    margin-left: 10px;
+    opacity: 1;
+}
+
+header .inner-header .gnb ul li .product-hidden .explore li a:hover {
+    color: rgb(7, 7, 236);
+}
+
+/* gnb solution */
+header .inner-header .gnb ul li:hover .solution-hidden {
+    transition: 0.3s;
+    display: flex;
+}
+
+header .inner-header .gnb ul li .solution-hidden {
+    display: none;
+    margin-left: 20px;
+    font-size: 15px;
+    font-weight: normal;
+}
+
+/* solution-hidden For */
+header .inner-header .gnb ul li .solution-hidden .For {
+    position: absolute;
+    top: 80%;
+    left: 22%;
+
+    width: 250px;
+    height: 280px;
+    background: black;
+    border: 1px solid grey;
+    border-radius: 1%;
+    flex-direction: column;
+}
+
+header .inner-header .gnb ul li .solution-hidden .For .for2 {
+    margin-top: 30px;
+    margin-left: 10px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+header .inner-header .gnb ul li .solution-hidden .For li {
+    margin-left: 10px;
+}
+
+header .inner-header .gnb ul li .solution-hidden .For li:hover {
+    color: rgb(7, 7, 236);
+}
+
+header .inner-header .gnb ul li .solution-hidden .For li a span {
+    opacity: 0;
+    transition: 0.1s;
+}
+
+header .inner-header .gnb ul li .solution-hidden .For li a:hover span {
+    margin-left: 10px;
+    opacity: 1;
+}
+
+header .inner-header .gnb ul li .solution-hidden .For li a:hover {
+    color: rgb(7, 7, 236);
+}
+
+/* solution-hidden BySol*/
+header .inner-header .gnb ul li .solution-hidden .BySol {
+    position: absolute;
+    top: 425%;
+    left: 22%;
+    width: 250px;
+    height: 210px;
+    background: black;
+    border: 1px solid grey;
+    border-radius: 1%;
+    flex-direction: column;
+}
+
+header .inner-header .gnb ul li .solution-hidden .BySol .by {
+    margin-top: 20px;
+    margin-left: 10px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+header .inner-header .gnb ul li .solution-hidden .BySol li {
+    margin-left: 10px;
+}
+
+header .inner-header .gnb ul li .solution-hidden .BySol li:hover {
+    color: rgb(7, 7, 236);
+}
+
+header .inner-header .gnb ul li .solution-hidden .BySol li a span {
+    opacity: 0;
+    transition: 0.1s;
+}
+
+header .inner-header .gnb ul li .solution-hidden .BySol li a:hover span {
+    margin-left: 10px;
+    opacity: 1;
+}
+
+header .inner-header .gnb ul li .solution-hidden .BySol li a:hover {
+    color: rgb(7, 7, 236);
+}
+
+/* solution-hidden CaseStudies*/
+header .inner-header .gnb ul li .solution-hidden .CaseStudies {
+    position: absolute;
+    top: 685%;
+    left: 22%;
+    width: 250px;
+    height: 150px;
+    background: black;
+    border: 1px solid grey;
+    border-radius: 1%;
+    flex-direction: column;
+}
+
+header .inner-header .gnb ul li .solution-hidden .CaseStudies .cs {
+    margin-top: 20px;
+    margin-left: 10px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+header .inner-header .gnb ul li .solution-hidden .CaseStudies li {
+    margin-left: 10px;
+}
+
+header .inner-header .gnb ul li .solution-hidden .CaseStudies li:hover {
+    color: rgb(7, 7, 236);
+}
+
+header .inner-header .gnb ul li .solution-hidden .CaseStudies li a span {
+    opacity: 0;
+    transition: 0.1s;
+}
+
+header .inner-header .gnb ul li .solution-hidden .CaseStudies li a:hover span {
+    margin-left: 10px;
+    opacity: 1;
+}
+
+header .inner-header .gnb ul li .solution-hidden .CaseStudies li a:hover {
+    color: rgb(7, 7, 236);
+}
+
+/* OpenSources -hidden */
+header .inner-header .gnb ul li:hover .OpenSource-hidden {
+    transition: 0.3s;
+    display: flex;
+}
+
+header .inner-header .gnb ul li .OpenSource-hidden {
+    display: none;
+    margin-left: 20px;
+    font-size: 15px;
+    font-weight: normal;
+}
+
+/* solution-hidden OpenSource-hidden */
+header .inner-header .gnb ul li .OpenSource-hidden .GitHub {
+    position: absolute;
+    top: 100%;
+    left: 31%;
+    width: 300px;
+    height: 120px;
+    background: black;
+    border: 1px solid grey;
+    border-radius: 1%;
+    flex-direction: column;
+}
+
+header .inner-header .gnb ul li .OpenSource-hidden .GitHub .bol {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+header .inner-header .gnb ul li .OpenSource-hidden .GitHub li {
+    margin-left: 20px;
+}
+
+header .inner-header .gnb ul li .OpenSource-hidden .GitHub li:hover {
+    color: rgb(27, 27, 236);
+}
+
+/* ReadMe */
+header .inner-header .gnb ul li .OpenSource-hidden .ReadMe {
+    position: absolute;
+    top: 250%;
+    left: 31%;
+    width: 300px;
+    height: 120px;
+    background: black;
+    border: 1px solid grey;
+    border-radius: 1%;
+    flex-direction: column;
+}
+
+header .inner-header .gnb ul li .OpenSource-hidden .ReadMe .bol {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+header .inner-header .gnb ul li .OpenSource-hidden .ReadMe li {
+    margin-left: 20px;
+}
+
+header .inner-header .gnb ul li .OpenSource-hidden .ReadMe li:hover {
+    color: rgb(27, 27, 236);
+}
+
+/* Repositories */
+header .inner-header .gnb ul li .OpenSource-hidden .Repositories {
+    position: absolute;
+    top: 400%;
+    left: 31%;
+    width: 300px;
+    height: 220px;
+    background: black;
+    border: 1px solid grey;
+    border-radius: 1%;
+    flex-direction: column;
+}
+
+header .inner-header .gnb ul li .OpenSource-hidden .Repositories .repo {
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+header .inner-header .gnb ul li .OpenSource-hidden .Repositories li {
+    margin-left: 20px;
+}
+
+header .inner-header .gnb ul li .OpenSource-hidden .Repositories li:hover {
+    color: rgb(27, 27, 236);
+}
+
+/* search-box */
+header .inner-header .search-box {
+    position: relative;
+    height: 40px;
+    top: 25px;
+    background-color: rgba(128,128,128,0.5);
+    opacity: 0.7;
+    right: 20px;
+    box-sizing: border-box;
+    border: 1px solid gray;
+    border-radius: 5%;
+    color: grey;
+    overflow: hidden;
+}
+
+header .inner-header .search-box input {
+    line-height: 40px;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+}
+/* 
+header .inner-header .search-box a:hover {
+    background: black;
+} */
+
+header .inner-header .sign {
+    position: relative;
+    top: 30px;
+    right: 1px;
+    display: flex;
+    font-size: 20px;
+}
+
+header .inner-header .sign .signin {
+    position: relative;
+    margin-right: 20px;
+
+}
+
+header .inner-header .sign a:hover {
+    transition: 0.3s;
+    opacity: 0.6;
+}
+
+/* section.main */
+section.main {
+    background: url(../Images/pexels-francesco-ungaro-998641.jpg) no-repeat center/ cover fixed;
+    position: relative;
+    top: 70%;
+    height: 100vh;
+}
+
+section.main .main-btn {
+    position: relative;
+    width: 30%;
+    left: 20%;
+    font-size: 20px;
+    color: white;
+    background: black;
+    /*  opacity: 0.5; */
+    top: 20px;
+    padding: 10px 15px;
+    border: 1px solid grey;
+    border-radius: 30px;
+    align-items: center;
+}
+section.main .main-btn a{
+    transition: 0.3s;
+}
+
+section.main .main-btn .mainicon {
+    float: left;
+    font-size: 30px;
+    line-height: 50px;
+    margin-right: 10px;
+}
+
+section.main .main-btn .maintext {
+    color: white;
+    float: left;
+    font-size: 18px;
+    line-height: 25px;
+}
+
+section.main .main-btn .maintext span {
+    font-weight: bold;
+}
+
+section.main .main-btn .mainarrow {
+    float: left;
+    width: 40px;
+    margin-left: 50px;
+    padding-left: 20px;
+    line-height: 50px;
+}
+section.main .main-btn a:hover .mainarrow{
+    display: none;
+}
+
+section.main .main-btn .hidden-arrow {
+    float: left;
+    content: '';
+    display: none;
+    position: relative;
+    transition: 2s;
+}
+
+section.main .main-btn a:hover .hidden-arrow{
+    display: block;
+    position: relative;
+    top: 10px;
+    left: 10%;
+}
+
+section.main h1 {
+    color: white;
+    position: relative;
+    left: 20%;
+    top: 3%;
+    font-size: 80px;
+    font-weight: bold;
+}
+
+section.main h2 {
+    color: #BBB;
+    position: relative;
+    left: 20%;
+    top: 7%;
+
+    margin-bottom: 20px;
+    font-size: 35px;
+}
+
+/* email btn */
+section.main .email {
+    position: relative;
+    display: flex;
+    width: 25%;
+    height: 30px;
+    top: 12%;
+    left: 20%;
+    font-size: 20px;
+    color: white;
+    padding: 10px 50px 10px 5px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    line-height: 30px;
+}
+
+section.main .email:hover {
+    opacity: 0.5;
+}
+
+section.main .email-btn {
+    position: relative;
+    width: 15%;
+    left: 40%;
+    top: 6%;
+    height: 30px;
+    background: pink;
+    opacity: 0.7;
+
+    font-size: 25px;
+    padding: 13px 40px 13px 10px;
+    border-radius: 5px;
+    justify-content: center;
+    align-content: center;
+    overflow: hidden;
+}
+
+section.main .email-btn:hover {
+    opacity: 1;
+    transition: 0.3s;
+}
+
+/* start-btn */
+section.main .start-btn {
+    position: relative;
+    width: 23%;
+    left: 60%;
+    height: 30px;
+    color: white;
+    border: 1px solid purple;
+    font-size: 25px;
+    padding: 13px 40px 13px 10px;
+    border-radius: 5px;
+    justify-content: center;
+    align-content: center;
+    overflow: hidden;
+}
+
+section.main .start-btn:hover {
+    transition: 0.3s;
+    border: 1px solid white;
+}
+
+section.main .start-btn a .mainarrows {
+    float: right;
+   /*  display: block; */
+}
+section.main .start-btn a:hover .mainarrows {
+    display: none;
+}
+section.main .start-btn a .hidden-arrow {
+    display: none;
+}
+section.main .start-btn a:hover .hidden-arrow {
+    float: right;
+    display: block;
+}
+
+
+/* turst */
+section.main .trust {
+    position: relative;
+    color: white;
+    width: 90%;
+    top: 20%;
+}
+
+section.main .trust h3 {
+    position: relative;
+    left: 22%;
+    font-weight: bold;
+}
+
+section.main .trust ul {
+    position: relative;
+    float: left;
+    left: 20%;
+    width: 80%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+section.main .trust ul li {
+    /* 박스제한 */
+    width: 20%;
+    box-sizing: border-box;
+    height: 20px;
+    justify-items: center;
+    align-items: center;
+}
+
+section.main .trust .mercedes {
+    margin-left: 50px;
+    margin-right: 10px;
+}
+
+section.main .trust ul .mercedes img {
+    position: relative;
+    right: 100px;
+}
+
+/* section padding*/
+section.padding {
+    background: url(../Images/pexels-francesco-ungaro-998641.jpg) no-repeat center/ cover fixed;
+    height: 100vh;
+
+}
+
+/* section.Productivity */
+section.Productivity {
+    background: url(../Images/pexels-francesco-ungaro-998641.jpg) no-repeat center/ cover fixed;
+    height: 100vh;
+}
+
+section.Productivity .Productivity-hidden {
+    width: 100%;
+    height: 100%;
+    animation: fadeinleft 1s;
+}
+
+
+section.Productivity .Productivity-hidden .Productivity-title {
+    position: relative;
+    left: 15%;
+    top: 20%;
+
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+
+}
+
+section.Productivity .Productivity-hidden .Productivity-title::before {
+    opacity: 0;
+    transform: translateX(-100px);
+}
+
+section.Productivity .Productivity-hidden .Productivity-title::after {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+section.Productivity .Productivity-hidden .accel {
+    position: relative;
+    width: 70%;
+    left: 22%;
+    top: 25%;
+
+    color: white;
+    font-size: 50px;
+    line-height: 1.2;
+}
+
+section.Productivity .Productivity-hidden .accel span {
+    color: rgb(54, 235, 87);
+}
+
+
+/* section.ProductivityBox */
+section.ProductivityBox {
+    background: url(../Images/pexels-francesco-ungaro-998641.jpg) no-repeat center/ cover fixed;
+    height: 100vh;
+}
+
+section.ProductivityBox .container-product {
+    position: relative;
+    width: 95%;
+    margin: 0 auto;
+    height: 90vh;
+
+    border: 1px solid gray;
+    border-radius: 10px;
+    background-color: rgba(32, 32, 50, 0.6);
+}
+
+section.ProductivityBox .container-product .box-header {
+    color: white;
+    height: 10%;
+    font-size: 30px;
+    border: 1px solid gray;
+    z-index: 1;
+    opacity: 0.5;
+}
+
+section.ProductivityBox .container-product .box-header .cross {
+    float: left;
+    width: 10%;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+section.ProductivityBox .container-product .box-header .html {
+    font-size: 20px;
+    position: relative;
+    top: 20%;
+    left: 5%;
+    width: 60%;
+    height: 70%;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid gray;
+    padding: 0;
+
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+section.ProductivityBox .container-product .box-header .plus {
+    position: absolute;
+    width: 5%;
+    top: 3%;
+    right: 1%;
+    align-items: center;
+    font-size: 30px;
+}
+
+section.ProductivityBox .container-product .left-box {
+    position: absolute;
+    width: 8%;
+    height: 89.5%;
+    border: 1px solid gray;
+    overflow: hidden;
+}
+
+section.ProductivityBox .container-product .left-box .lnr {
+    display: block;
+    margin-top: 30%;
+    margin-left: 33%;
+    color: white;
+
+    font-size: 40px;
+    opacity: 0.5;
+}
+
+section.ProductivityBox .container-product .center-high {
+    position: absolute;
+    left: 8%;
+    width: 51.78%;
+    height: 45%;
+    border: 1px solid gray;
+
+    color: white;
+    font-size: 20px;
+    padding-right: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-items: center;
+
+
+    padding-top: 2%;
+    overflow: hidden;
+}
+
+section.ProductivityBox .container-product .center-high img {
+    position: relative;
+    width: 80%;
+    left: 5%;
+}
+
+section.ProductivityBox .container-product .center-low {
+    position: absolute;
+    left: 8%;
+    top: 59%;
+    width: 52.3%;
+    height: 41%;
+    border: 1px solid gray;
+}
+
+section.ProductivityBox .container-product .center-low .upperindex {
+    position: relative;
+    padding-top: 20px;
+    padding-left: 20px;
+    font-size: 20px;
+}
+
+section.ProductivityBox .container-product .center-low img {
+    position: absolute;
+    left: 5%;
+    bottom: 15%;
+
+    animation: fadeinbottom 1s;
+}
+
+
+section.ProductivityBox .container-product .right-box {
+    position: absolute;
+    right: 0%;
+    width: 39.5%;
+    height: 89.5%;
+    border: 1px solid gray;
+    overflow: hidden;
+}
+
+section.ProductivityBox .container-product .right-box .right-header {
+    display: flex;
+    box-sizing: border-box;
+
+    margin: 10px;
+    opacity: 1;
+    flex-direction: row;
+    justify-content: space-around;
+
+    font-size: 30px;
+}
+
+section.ProductivityBox .container-product .right-box .right-header img {
+    width: 30px;
+}
+
+section.ProductivityBox .container-product .right-box .globe {
+    display: flex;
+    margin: 0 auto;
+    height: 95%;
+    transition: 0.7s;
+
+    animation: fadeinbottom 1s;
+}
+
+section.ProductivityBox .container-product .right-box .globe::before {
+    display: none;
+    transform: translateY(-20px);
+}
+
+section.ProductivityBox .container-product .right-box .globe::after {
+    display: flex;
+    transform: translateY(0);
+}
+
+/* section.codespace */
+section.codespace {
+    background: url(../Images/pexels-francesco-ungaro-998641.jpg) no-repeat center/ cover fixed;
+    height: 100vh;
+}
+
+section.codespace .codespace-txt {
+    position: relative;
+    top: 10%;
+    left: 11%;
+
+    font-size: 30px;
+    animation: fadeinright .7s;
+}
+
+section.codespace .codespace-txt span {
+    font-weight: bold;
+}
+
+section.codespace .codespace-txt a:hover {
+    text-decoration: underline;
+}
+
+section.codespace .codespace-txt .intocodepsace{
+    text-decoration: underline;
+}
+
+section.codespace .codespace-txt .mainarrow {
+    position: relative;
+    width: 320px;
+    bottom: 30px;
+    left: 450px;
+    display: none;
+}
+section.codespace .codespace-txt a:hover .mainarrow{
+    display: none;
+}
+
+section.codespace .codespace-txt .hidden-arrow {
+    content: '';
+    /* display: none; */
+    position: relative;
+    bottom: 30px;
+    left: 450px;
+}
+
+section.codespace .codespace-txt a:hover .hidden-arrow{
+    position: relative;
+    bottom: 30px;
+    left: 450px;
+}
+
+
+section.codespace .codespace-txt a span .hovertxt {
+    padding: auto;
+}
+
+section.codespace .ports {
+    position: relative;
+    right: 1%;
+}
+
+section.codespace .ports img {
+    position: absolute;
+    width: 30%;
+
+    right: 10%;
+    top: -100px;
+    z-index: 10;
+    animation: fadeinright 1s;
+}
+
+section.codespace .contextmenu {
+    position: relative;
+}
+
+section.codespace .contextmenu img {
+    position: absolute;
+    width: 25%;
+
+    right: 3%;
+    top: -300px;
+    z-index: 11;
+
+    animation: fadeinleft 1s;
+}
+
+/* section.codespace .increase */
+section.codespace .increase {
+    position: relative;
+    top: 30%;
+    left: 11%;
+
+    font-size: 20px;
+    line-height: 1.3;
+    animation: fadeinleft 1.2s;
+}
+
+section.codespace .increase .did-btn {
+    padding: 10px 20px 10px;
+    width: 14%;
+
+    font-weight: bold;
+    color: greenyellow;
+    border: 1px solid greenyellow;
+    border-radius: 50px;
+}
+
+section.codespace .increase h2 {
+    font-weight: bold;
+    color: greenyellow;
+    font-size: 60px;
+}
+
+section.GitHubCopilot {
+    background: url(../Images/pexels-francesco-ungaro-998641.jpg) no-repeat center/ cover fixed;
+    height: 100vh;
+}
+
+section.GitHubCopilot .upperbox {
+    position: relative;
+    background: rgba(30, 30, 60, 0.4);
+    width: 80%;
+    height: 30%;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-top: 45px;
+
+    font-size: 25px;
+    border: 1px solid gray;
+    border-radius: 20px;
+}
+
+section.GitHubCopilot a:hover .upperbox {
+    transition: 0.3s;
+    background: rgba(173, 255, 47, 0.2);
+}
+
+section.GitHubCopilot .upperbox .meet:hover {
+    text-decoration: underline;
+}
+section.GitHubCopilot .upperbox .mainarrow {
+    position: relative;
+    bottom: 30px;
+    left: 240px;
+}
+section.GitHubCopilot .upperbox a:hover .mainarrow{
+    display: none;
+}
+
+section.GitHubCopilot .upperbox .hidden-arrow {
+    content: '';
+    display: none;
+    position: relative;
+}
+
+section.GitHubCopilot .upperbox a:hover .hidden-arrow{
+    display: block;
+    bottom: 30px;
+    left: 240px;
+}
+
+
+section.GitHubCopilot .upperbox .uppertext {
+    margin-left: 20px;
+    line-height: 1.2;
+}
+
+section.GitHubCopilot .upperbox .uppertext .bolder {
+    font-size: bold;
+}
+
+section.GitHubCopilot .upperbox .replay {
+    position: absolute;
+    right: 1%;
+    bottom: 1%;
+}
+
+section.GitHubCopilot .upperbox .replay img {
+    width: 90%;
+}
+
+/* section.GitHubCopilot .leftbox */
+section.GitHubCopilot .leftbox {
+    float: left;
+    background: rgba(30, 30, 70, 0.4);
+    width: 40%;
+    height: 65%;
+    margin-top: 5%;
+    margin-left: 4%;
+    margin-right: 2%;
+
+    padding-left: 20px;
+    padding-top: 45px;
+
+    font-size: 25px;
+    border: 1px solid gray;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+section.GitHubCopilot .leftbox .lefttext {
+    margin-left: 4%;
+    line-height: 1.3;
+}
+
+section.GitHubCopilot .leftbox .lefttext .bolder {
+    font-size: bold;
+}
+
+section.GitHubCopilot .leftbox .discover:hover {
+    text-decoration: underline;
+}
+section.GitHubCopilot .leftbox .mainarrow {
+    position: relative;
+    bottom: 30px;
+    left: 280px;
+}
+section.GitHubCopilot .leftbox a:hover .mainarrow{
+    display: none;
+}
+
+section.GitHubCopilot .leftbox .hidden-arrow {
+    content: '';
+    display: none;
+    position: relative;
+}
+
+section.GitHubCopilot .leftbox a:hover .hidden-arrow{
+    display: block;
+    bottom: 30px;
+    left: 280px;
+}
+
+section.GitHubCopilot .leftbox .workflowImg {
+    position: relative;
+}
+
+section.GitHubCopilot .leftbox .workflowImg img {
+    display: flex;
+    width: 95%;
+    top: 2%;
+    left: 6%;
+}
+
+section.GitHubCopilot .rightbox {
+    float: right;
+    background: rgba(30, 30, 70, 0.4);
+    width: 40%;
+    height: 65%;
+    margin-top: 5%;
+    margin-left: 2%;
+    margin-right: 4%;
+
+    padding-left: 20px;
+    padding-top: 45px;
+
+    font-size: 25px;
+    border: 1px solid gray;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+section.GitHubCopilot .rightbox .righttext {
+    padding-left: 4%;
+    line-height: 1.3;
+}
+section.GitHubCopilot .rightbox .righttext .getgit{
+    font-size: bold;
+}
+section.GitHubCopilot .rightbox .righttext .getgit:hover{
+    text-decoration: underline;
+}
+section.GitHubCopilot .rightbox .mainarrow {
+    position: relative;
+    bottom: 30px;
+    left: 220px;
+}
+section.GitHubCopilot .rightbox a:hover .mainarrow{
+    display: none;
+}
+
+section.GitHubCopilot .rightbox .hidden-arrow {
+    content: '';
+    display: none;
+    position: relative;
+}
+
+section.GitHubCopilot .rightbox a:hover .hidden-arrow{
+    display: block;
+    bottom: 30px;
+    left: 220px;
+}
+
+section.GitHubCopilot .righttbox .mobile {
+    position: relative;
+    
+}
+
+section.GitHubCopilot .rightbox .mobile img {
+    display: flex;
+    width: 95%;
+    top: 70px;
+    left: 6%;
+    
+}
+section.padding2{
+    background: url(../Images/pexels-francesco-ungaro-998641.jpg) no-repeat center/ cover fixed;
+    height: 50vh;
+    z-index: -10000;
+}
+/* footer */
+footer {
+    background: url(../Images/pexels-francesco-ungaro-998641.jpg) no-repeat center/ cover fixed;
+    /* background: rgba(255, 255, 255, 0.073); */
+    color: rgba(255, 255, 255, 0.537);
+}
+
+footer ul {
+    display: flex;
+    width: 80%;
+    margin: 0 10%;
+    align-items: center;
+}
+
+footer ul li:nth-child(1) {
+    display: flex;
+    width: 100%;
+
+}
+
+footer ul li:nth-child(1) div {
+    margin-right: 25px;
+}
+
+footer ul li:nth-child(1) div a:hover {
+    color: rgb(53, 113, 241);
+    text-decoration: underline;
+}
+
+footer ul li.footer-logo {
+    display: flex;
+    justify-content: end;
+}
+
+footer ul li.footer-logo div {
+    margin: 20% 5% 20%;
+}
+
+footer ul li.footer-logo a img {
+    opacity: 0.348;
+    width: 25px;
+    padding: 8% 0;
+}
+
+@media screen and (max-width: 1320px) {
+    section .page3 ul{
+        display: block;
+    }
+
+    section .page3 ul li:nth-child(1) {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1240px) {
+    section .page4 ul li div.fas {
+        font-size: 30px;
+    }
+    
+    section .page4 ul li div.ghs {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 1130px) {
+    .sub-header {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 970px) {
+    section .page5 ul li.per {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    
+    section .page1 ul li a:nth-child(1) {
+        color: rgb(10, 0, 38);
+        background: white;
+        display: block;
+        justify-content: center;
+        margin-bottom: 8%;
+    }
+
+    section .page1 ul li a:nth-child(2) {
+        display: block;
+    }
+}
